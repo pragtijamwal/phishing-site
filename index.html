@@ -67,7 +67,8 @@
 
             // Check if the entered credentials match the stored ones
             if (username === storedUsername && password === storedPassword) {
-                alert("Login successful!");
+                // Redirect to the message page
+                window.location.href = 'message.html';
             } else {
                 alert("Invalid username or password.");
             }
