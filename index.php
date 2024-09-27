@@ -41,20 +41,6 @@
         }
     </style>
     <script>
-        function signUp(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            var username = document.getElementById('signup-username').value;
-            var password = document.getElementById('signup-password').value;
-
-            // Store the username and password in local storage
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
-
-            alert("Sign up successful! You can now log in.");
-            document.getElementById('signup-form').reset(); // Reset the form
-        }
-
         function login(event) {
             event.preventDefault(); // Prevent the form from submitting
 
@@ -91,9 +77,9 @@
     <div id="form-container">
         <div id="signup-form">
             <h2>Sign Up</h2>
-            <form onsubmit="signUp(event)">
-                <input type="text" id="signup-username" placeholder="Create Username" required>
-                <input type="password" id="signup-password" placeholder="Create Password" required>
+            <form action="signup.php" method="POST">
+                <input type="text" id="signup-username" name="username" placeholder="Create Username" required>
+                <input type="password" id="signup-password" name="password" placeholder="Create Password" required>
                 <input type="submit" value="Sign Up">
             </form>
             <div class="toggle-link" onclick="toggleForms()">Already have an account? Log in</div>
